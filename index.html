@@ -165,14 +165,14 @@
 <body>
     <div class="container">
         <div class="big-title text-center py-4">Lorem Ipsum is simply dummy text of the printing</div>
-        <div class="search-box row col-5 col-md-7 px-3 py-4 mx-auto d-flex rounded position-relative">
+        <div class="search-box row col-12 col-md-10 col-lg-5 px-3 py-4 mx-auto d-flex rounded position-relative">
             <div class="col-12 input-notification ps-0 text-white d-none position-absolute bottom-0 mb-0 pb-1">
                 Enter sentence to implement searching
             </div>
-            <div class="col-6 p-0">
-                <input class="w-100 sentence-input p-2 rounded-start" placeholder="Enter sentence here">
+            <div class="col-12 col-md-6 p-0 mt-0">
+                <input class="w-100 sentence-input p-2" placeholder="Enter sentence here">
             </div>
-            <div class="col-5 p-0 position-relative">
+            <div class="col-12 col-md-5 p-0 mt-3 mt-sm-0 position-relative">
                 <input class="w-100 p-2 keywords-input" placeholder="Enter keywords here">
                 <div class="position-absolute keywords-loading d-none top-50 end-0 me-2 translate-middle-y">
                     <div class="spinner-border spinner-border-sm text-secondary" role="status">
@@ -180,7 +180,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col p-0 search-btn-wrapper rounded-end d-flex align-items-center justify-content-center">
+            <div
+                class="col p-2 p-md-0 search-btn-wrapper mt-3 mt-sm-0 d-flex align-items-center justify-content-center">
                 <div class="search-btn"></div>
             </div>
         </div>
@@ -211,12 +212,12 @@
 
         <div class="search-result-box mt-4">
             <div class="support-page row">
-                <div class="result-list col-6"></div>
-                <div class="result-detail-box col-6"></div>
+                <div class="result-list col-12 col-md-6"></div>
+                <div class="result-detail-box col-12 col-md-6 mt-2 mt-md-0 mb-4 mb-md-0"></div>
             </div>
             <div class="refuse-page row d-none">
-                <div class="result-list col-6"></div>
-                <div class="result-detail-box col-6"></div>
+                <div class="result-list col-12 col-md-6"></div>
+                <div class="result-detail-box col-12 col-md-6 mt-2 mt-md-0 mb-4 mb-md-0"></div>
             </div>
         </div>
     </div>
@@ -315,7 +316,7 @@
                                 $('.support-page .result-detail-box').empty();
                                 t.addClass('active').siblings().removeClass('active');
                                 $.map(detaiSupportList[index], function (item, index) {
-                                    var itemTag = `<div class="result-detail-item p-2 ${(index+1) == totalNumber ? '' : 'border-bottom'} mb-2">
+                                    var itemTag = `<div class="result-detail-item p-2 ${(index + 1) == totalNumber ? '' : 'border-bottom'} mb-2">
                                         <div class="detail-noted-sentence">${item.text}</div>
                                         <div class="detail-statistics d-flex justify-content-between mt-2">
                                             <div>contradiction <div class="statistic ${addPointColor(item.entailment.contradiction.toFixed(8))}">${item.entailment.contradiction.toFixed(8)}</div></div>
@@ -336,7 +337,7 @@
                                 $('.refuse-page .result-detail-box').empty();
                                 t.addClass('active').siblings().removeClass('active');
                                 $.map(detailRefuseList[index], function (item, index) {
-                                    var itemTag = `<div class="result-detail-item p-2 ${(index+1) == totalNumber ? '' : 'border-bottom'} mb-2">
+                                    var itemTag = `<div class="result-detail-item p-2 ${(index + 1) == totalNumber ? '' : 'border-bottom'} mb-2">
                                         <div class="detail-noted-sentence">${item.text}</div>
                                         <div class="detail-statistics d-flex justify-content-between mt-2">
                                             <div>contradiction <div class="statistic ${addPointColor(item.entailment.contradiction.toFixed(8))}">${item.entailment.contradiction.toFixed(8)}</div></div>
