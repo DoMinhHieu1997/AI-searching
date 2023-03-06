@@ -45,6 +45,10 @@
             background: #6c6b6b;
         }
 
+        .keywords-loading .spinner-border {
+            color: #cccccc !important;
+        }
+
         .search-box {
             background: #6497B1;
         }
@@ -56,6 +60,15 @@
             background-repeat: no-repeat;
             height: 25px;
             width: 25px;
+        }
+
+        .btn-disabled {
+            cursor: unset;
+            opacity: .5;
+        }
+
+        .btn-disabled:hover {
+            background: #5d5b5b;
         }
 
         .title-box-item {
@@ -159,8 +172,13 @@
             <div class="col-6 p-0">
                 <input class="w-100 sentence-input p-2 rounded-start" placeholder="Enter sentence here">
             </div>
-            <div class="col-5 p-0">
+            <div class="col-5 p-0 position-relative">
                 <input class="w-100 p-2 keywords-input" placeholder="Enter keywords here">
+                <div class="position-absolute keywords-loading d-none top-50 end-0 me-2 translate-middle-y">
+                    <div class="spinner-border spinner-border-sm text-secondary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
             </div>
             <div class="col p-0 search-btn-wrapper rounded-end d-flex align-items-center justify-content-center">
                 <div class="search-btn"></div>
@@ -168,11 +186,11 @@
         </div>
         <div class="title-box mt-5 d-flex align-items-center justify-content-between">
             <div>
-                <div class="title-box-item support-tab active d-inline-block rounded py-1 px-3">List news support (<span
-                        class="support-result-number">5</span>)
+                <div class="title-box-item support-tab active d-inline-block rounded py-1 px-3">List support news (<span
+                        class="support-result-number">0</span>)
                 </div>
-                <div class="title-box-item refuse-tab d-inline-block rounded py-1 px-3">List news refuse (<span
-                        class="refuse-result-number">6</span>)
+                <div class="title-box-item refuse-tab d-inline-block rounded py-1 px-3">List refuse news (<span
+                        class="refuse-result-number">0</span>)
                 </div>
             </div>
             <div class="loading-result d-none">
@@ -193,261 +211,12 @@
 
         <div class="search-result-box mt-4">
             <div class="support-page row">
-                <div class="result-list col-6">
-                    <div
-                        class="result-item result-item-support active rounded d-flex align-items-center shadow-sm p-3 mb-3">
-                        <div class="result-number">1</div>
-                        <div class="ps-4 pe-2 noted-sentence">
-                            "Lorem Ipsum is simply dummy text of the printing and typesetting industry"
-                        </div>
-                        <div class="detail-result-btn mt-4">
-                            <div class="btn rounded text-white px-3 py-1">detail</div>
-                        </div>
-                    </div>
-                    <div class="result-item result-item-support rounded d-flex align-items-center shadow-sm p-3 mb-3">
-                        <div class="result-number">2</div>
-                        <div class="ps-4 pe-2 noted-sentence">
-                            "Lorem Ipsum is simply dummy text of the printing and typesetting industry"
-                        </div>
-                        <div class="detail-result-btn mt-4">
-                            <div class="btn rounded text-white px-3 py-1">detail</div>
-                        </div>
-                    </div>
-                    <div class="result-item result-item-support rounded d-flex align-items-center shadow-sm p-3 mb-3">
-                        <div class="result-number">3</div>
-                        <div class="ps-4 pe-2 noted-sentence">
-                            "Lorem Ipsum is simply dummy text of the printing and typesetting industry"
-                        </div>
-                        <div class="detail-result-btn mt-4">
-                            <div class="btn rounded text-white px-3 py-1">detail</div>
-                        </div>
-                    </div>
-                    <div class="result-item result-item-support rounded d-flex align-items-center shadow-sm p-3 mb-3">
-                        <div class="result-number">4</div>
-                        <div class="ps-4 pe-2 noted-sentence">
-                            "Lorem Ipsum is simply dummy text of the printing and typesetting industry"
-                        </div>
-                        <div class="detail-result-btn mt-4">
-                            <div class="btn rounded text-white px-3 py-1">detail</div>
-                        </div>
-                    </div>
-                    <div class="result-item result-item-support rounded d-flex align-items-center shadow-sm p-3 mb-3">
-                        <div class="result-number">5</div>
-                        <div class="ps-4 pe-2 noted-sentence">
-                            "Lorem Ipsum is simply dummy text of the printing and typesetting industry"
-                        </div>
-                        <div class="detail-result-btn mt-4">
-                            <div class="btn rounded text-white px-3 py-1">detail</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="result-detail-box col-6">
-                    <div class="result-detail-item p-2 border-bottom mb-2">
-                        <div class="detail-noted-sentence">"Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry"</div>
-                        <div class="detail-statistics d-flex justify-content-between mt-2">
-                            <div>rebuttal: <span class="statistic low-value">0.28436574</span></div>
-                            <div>neutral: <span class="statistic">0.28436574</span></div>
-                            <div>agreeable: <span class="statistic high-value">0.28436574</span></div>
-                        </div>
-                    </div>
-                    <div class="result-detail-item p-2 border-bottom mb-2">
-                        <div class="detail-noted-sentence">"Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry"</div>
-                        <div class="detail-statistics d-flex justify-content-between mt-2">
-                            <div>rebuttal: <span class="statistic low-value">0.28436574</span></div>
-                            <div>neutral: <span class="statistic">0.28436574</span></div>
-                            <div>agreeable: <span class="statistic high-value">0.28436574</span></div>
-                        </div>
-                    </div>
-                    <div class="result-detail-item p-2 border-bottom mb-2">
-                        <div class="detail-noted-sentence">"Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry"</div>
-                        <div class="detail-statistics d-flex justify-content-between mt-2">
-                            <div>rebuttal: <span class="statistic low-value">0.28436574</span></div>
-                            <div>neutral: <span class="statistic">0.28436574</span></div>
-                            <div>agreeable: <span class="statistic high-value">0.28436574</span></div>
-                        </div>
-                    </div>
-                    <div class="result-detail-item p-2 border-bottom mb-2">
-                        <div class="detail-noted-sentence">"Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry"</div>
-                        <div class="detail-statistics d-flex justify-content-between mt-2">
-                            <div>rebuttal: <span class="statistic low-value">0.28436574</span></div>
-                            <div>neutral: <span class="statistic">0.28436574</span></div>
-                            <div>agreeable: <span class="statistic high-value">0.28436574</span></div>
-                        </div>
-                    </div>
-                    <div class="result-detail-item p-2 border-bottom mb-2">
-                        <div class="detail-noted-sentence">"Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry"</div>
-                        <div class="detail-statistics d-flex justify-content-between mt-2">
-                            <div>rebuttal: <span class="statistic low-value">0.28436574</span></div>
-                            <div>neutral: <span class="statistic">0.28436574</span></div>
-                            <div>agreeable: <span class="statistic high-value">0.28436574</span></div>
-                        </div>
-                    </div>
-                    <div class="result-detail-item p-2 border-bottom mb-2">
-                        <div class="detail-noted-sentence">"Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry"</div>
-                        <div class="detail-statistics d-flex justify-content-between mt-2">
-                            <div>rebuttal: <span class="statistic low-value">0.28436574</span></div>
-                            <div>neutral: <span class="statistic">0.28436574</span></div>
-                            <div>agreeable: <span class="statistic high-value">0.28436574</span></div>
-                        </div>
-                    </div>
-                    <div class="result-detail-item p-2 border-bottom mb-2">
-                        <div class="detail-noted-sentence">"Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry"</div>
-                        <div class="detail-statistics d-flex justify-content-between mt-2">
-                            <div>rebuttal: <span class="statistic low-value">0.28436574</span></div>
-                            <div>neutral: <span class="statistic">0.28436574</span></div>
-                            <div>agreeable: <span class="statistic high-value">0.28436574</span></div>
-                        </div>
-                    </div>
-                    <div class="result-detail-item p-2 border-bottom mb-2">
-                        <div class="detail-noted-sentence">"Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry"</div>
-                        <div class="detail-statistics d-flex justify-content-between mt-2">
-                            <div>rebuttal: <span class="statistic low-value">0.28436574</span></div>
-                            <div>neutral: <span class="statistic">0.28436574</span></div>
-                            <div>agreeable: <span class="statistic high-value">0.28436574</span></div>
-                        </div>
-                    </div>
-                </div>
+                <div class="result-list col-6"></div>
+                <div class="result-detail-box col-6"></div>
             </div>
             <div class="refuse-page row d-none">
-                <div class="result-list col-6">
-                    <div
-                        class="result-item result-item-support active rounded d-flex align-items-center shadow-sm p-3 mb-3">
-                        <div class="result-number">1</div>
-                        <div class="ps-4 pe-2 noted-sentence">
-                            "Lorem Ipsum is simply dummy text of the printing and typesetting industry"
-                        </div>
-                        <div class="detail-result-btn mt-4">
-                            <div class="btn rounded text-white px-3 py-1">detail</div>
-                        </div>
-                    </div>
-                    <div class="result-item result-item-support rounded d-flex align-items-center shadow-sm p-3 mb-3">
-                        <div class="result-number">2</div>
-                        <div class="ps-4 pe-2 noted-sentence">
-                            "Lorem Ipsum is simply dummy text of the printing and typesetting industry"
-                        </div>
-                        <div class="detail-result-btn mt-4">
-                            <div class="btn rounded text-white px-3 py-1">detail</div>
-                        </div>
-                    </div>
-                    <div class="result-item result-item-support rounded d-flex align-items-center shadow-sm p-3 mb-3">
-                        <div class="result-number">3</div>
-                        <div class="ps-4 pe-2 noted-sentence">
-                            "Lorem Ipsum is simply dummy text of the printing and typesetting industry"
-                        </div>
-                        <div class="detail-result-btn mt-4">
-                            <div class="btn rounded text-white px-3 py-1">detail</div>
-                        </div>
-                    </div>
-                    <div class="result-item result-item-support rounded d-flex align-items-center shadow-sm p-3 mb-3">
-                        <div class="result-number">4</div>
-                        <div class="ps-4 pe-2 noted-sentence">
-                            "Lorem Ipsum is simply dummy text of the printing and typesetting industry"
-                        </div>
-                        <div class="detail-result-btn mt-4">
-                            <div class="btn rounded text-white px-3 py-1">detail</div>
-                        </div>
-                    </div>
-                    <div class="result-item result-item-support rounded d-flex align-items-center shadow-sm p-3 mb-3">
-                        <div class="result-number">5</div>
-                        <div class="ps-4 pe-2 noted-sentence">
-                            "Lorem Ipsum is simply dummy text of the printing and typesetting industry"
-                        </div>
-                        <div class="detail-result-btn mt-4">
-                            <div class="btn rounded text-white px-3 py-1">detail</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="result-detail-box col-6">
-                    <div class="result-detail-item p-2 border-bottom mb-2">
-                        <div class="detail-noted-sentence">"Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry"</div>
-                        <div class="detail-statistics d-flex justify-content-between mt-2">
-                            <div>rebuttal: <span class="statistic low-value">0.28436574</span></div>
-                            <div>neutral: <span class="statistic">0.28436574</span></div>
-                            <div>agreeable: <span class="statistic high-value">0.28436574</span></div>
-                        </div>
-                    </div>
-                    <div class="result-detail-item p-2 border-bottom mb-2">
-                        <div class="detail-noted-sentence">"Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry"</div>
-                        <div class="detail-statistics d-flex justify-content-between mt-2">
-                            <div>rebuttal: <span class="statistic low-value">0.28436574</span></div>
-                            <div>neutral: <span class="statistic">0.28436574</span></div>
-                            <div>agreeable: <span class="statistic high-value">0.28436574</span></div>
-                        </div>
-                    </div>
-                    <div class="result-detail-item p-2 border-bottom mb-2">
-                        <div class="detail-noted-sentence">"Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry"</div>
-                        <div class="detail-statistics d-flex justify-content-between mt-2">
-                            <div>rebuttal: <span class="statistic low-value">0.28436574</span></div>
-                            <div>neutral: <span class="statistic">0.28436574</span></div>
-                            <div>agreeable: <span class="statistic high-value">0.28436574</span></div>
-                        </div>
-                    </div>
-                    <div class="result-detail-item p-2 border-bottom mb-2">
-                        <div class="detail-noted-sentence">"Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry"</div>
-                        <div class="detail-statistics d-flex justify-content-between mt-2">
-                            <div>rebuttal: <span class="statistic low-value">0.28436574</span></div>
-                            <div>neutral: <span class="statistic">0.28436574</span></div>
-                            <div>agreeable: <span class="statistic high-value">0.28436574</span></div>
-                        </div>
-                    </div>
-                    <div class="result-detail-item p-2 border-bottom mb-2">
-                        <div class="detail-noted-sentence">"Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry"</div>
-                        <div class="detail-statistics d-flex justify-content-between mt-2">
-                            <div>rebuttal: <span class="statistic low-value">0.28436574</span></div>
-                            <div>neutral: <span class="statistic">0.28436574</span></div>
-                            <div>agreeable: <span class="statistic high-value">0.28436574</span></div>
-                        </div>
-                    </div>
-                    <div class="result-detail-item p-2 border-bottom mb-2">
-                        <div class="detail-noted-sentence">"Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry"</div>
-                        <div class="detail-statistics d-flex justify-content-between mt-2">
-                            <div>rebuttal: <span class="statistic low-value">0.28436574</span></div>
-                            <div>neutral: <span class="statistic">0.28436574</span></div>
-                            <div>agreeable: <span class="statistic high-value">0.28436574</span></div>
-                        </div>
-                    </div>
-                    <div class="result-detail-item p-2 border-bottom mb-2">
-                        <div class="detail-noted-sentence">"Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry"</div>
-                        <div class="detail-statistics d-flex justify-content-between mt-2">
-                            <div>rebuttal: <span class="statistic low-value">0.28436574</span></div>
-                            <div>neutral: <span class="statistic">0.28436574</span></div>
-                            <div>agreeable: <span class="statistic high-value">0.28436574</span></div>
-                        </div>
-                    </div>
-                    <div class="result-detail-item p-2 border-bottom mb-2">
-                        <div class="detail-noted-sentence">"Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry"</div>
-                        <div class="detail-statistics d-flex justify-content-between mt-2">
-                            <div>rebuttal: <span class="statistic low-value">0.28436574</span></div>
-                            <div>neutral: <span class="statistic">0.28436574</span></div>
-                            <div>agreeable: <span class="statistic high-value">0.28436574</span></div>
-                        </div>
-                    </div>
-                    <div class="result-detail-item p-2 border-bottom mb-2">
-                        <div class="detail-noted-sentence">"Lorem Ipsum is simply dummy text of the printing and
-                            typesetting industry"</div>
-                        <div class="detail-statistics d-flex justify-content-between mt-2">
-                            <div>rebuttal: <span class="statistic low-value">0.28436574</span></div>
-                            <div>neutral: <span class="statistic">0.28436574</span></div>
-                            <div>agreeable: <span class="statistic high-value">0.28436574</span></div>
-                        </div>
-                    </div>
-                </div>
+                <div class="result-list col-6"></div>
+                <div class="result-detail-box col-6"></div>
             </div>
         </div>
     </div>
@@ -455,8 +224,18 @@
     <script>
         $(document).ready(function () {
             var apiUrl = 'http://eminer.phapi.io:16334',
-                detaiSupportList = [];
-            detailRefuseList = [];
+                detaiSupportList = [],
+                detailRefuseList = [];
+
+            function addPointColor(point) {
+                if (point < 0.3) {
+                    return 'low-value';
+                } else if (point > 0.7) {
+                    return 'high-value';
+                } else {
+                    return '';
+                }
+            }
 
             $(".support-tab, .refuse-tab").on('click', function () {
                 var t = $(this),
@@ -470,9 +249,10 @@
             $(".search-btn").on('click', function () {
 
                 var sentence = $(".sentence-input").val().trim(),
-                    keywords = $('.keywords-input');
+                    keywords = $('.keywords-input'),
+                    isDisabled = $(this).parent().hasClass("btn-disabled");
 
-                if (sentence && keywords) {
+                if (sentence && keywords && !isDisabled) {
                     $('.input-notification').addClass('d-none');
                     $.ajax({
                         url: apiUrl + '/fake_find_evidence',
@@ -483,16 +263,16 @@
                             "post": sentence
                         }),
                         beforeSend: function () {
-
+                            $('.loading-result').removeClass("d-none");
                         },
                     }).done(function (data) {
                         if (data) {
-                            console.log(data);
                             var supportList = data.support,
                                 refuseList = data.refuse;
 
                             detaiSupportList = [];
                             detailRefuseList = [];
+                            $('.loading-result').addClass("d-none");
                             $(".support-result-number").text(supportList.length);
                             $(".refuse-result-number").text(refuseList.length);
                             $('.support-page .result-list').empty();
@@ -515,7 +295,7 @@
                             $.map(refuseList, function (item, index) {
                                 detailRefuseList.push(item.notable_sentences);
                                 var itemTag = `<div
-                                    class="result-item result-item-refuse ${index == 0 ? 'active' : ''} rounded d-flex align-items-center shadow-sm p-3 mb-3">
+                                    class="result-item result-item-refuse ${index == 0 ? 'active' : ''} rounded d-flex align-items-center justify-content-between shadow-sm p-3 mb-3">
                                     <div class="result-number">${index + 1}</div>
                                     <div class="ps-4 pe-2 noted-sentence">
                                         <a href="${item.url}" target="_blank">${item.title}</a>
@@ -529,44 +309,46 @@
                             });
                             $(".result-item-support").on('click', function () {
                                 var t = $(this),
-                                    index = t.children(".detail-result-btn").data('index');
+                                    index = t.children(".detail-result-btn").data('index'),
+                                    totalNumber = detaiSupportList[index].length;
 
                                 $('.support-page .result-detail-box').empty();
                                 t.addClass('active').siblings().removeClass('active');
                                 $.map(detaiSupportList[index], function (item, index) {
-
-                                    var itemTag = `<div class="result-detail-item p-2 border-bottom mb-2">
+                                    var itemTag = `<div class="result-detail-item p-2 ${(index+1) == totalNumber ? '' : 'border-bottom'} mb-2">
                                         <div class="detail-noted-sentence">${item.text}</div>
                                         <div class="detail-statistics d-flex justify-content-between mt-2">
-                                            <div>contradiction <div class="statistic low-value">${item.entailment.contradiction.toFixed(8)}</div></div>
-                                            <div>neutral <div class="statistic">${item.entailment.neutral.toFixed(8)}</div></div>
-                                            <div>entailment <div class="statistic high-value">${item.entailment.entailment.toFixed(8)}</div></div>
+                                            <div>contradiction <div class="statistic ${addPointColor(item.entailment.contradiction.toFixed(8))}">${item.entailment.contradiction.toFixed(8)}</div></div>
+                                            <div>neutral <div class="statistic ${addPointColor(item.entailment.neutral.toFixed(8))}">${item.entailment.neutral.toFixed(8)}</div></div>
+                                            <div>entailment <div class="statistic ${addPointColor(item.entailment.entailment.toFixed(8))}">${item.entailment.entailment.toFixed(8)}</div></div>
                                         </div>
                                     </div>`;
 
                                     $('.support-page .result-detail-box').append(itemTag);
                                 });
                             });
+                            $(".result-item-support").eq(0).trigger("click");
                             $(".result-item-refuse").on('click', function () {
                                 var t = $(this),
-                                    index = t.children(".detail-result-btn").data('index');
+                                    index = t.children(".detail-result-btn").data('index'),
+                                    totalNumber = detailRefuseList[index].length;
 
                                 $('.refuse-page .result-detail-box').empty();
                                 t.addClass('active').siblings().removeClass('active');
                                 $.map(detailRefuseList[index], function (item, index) {
-
-                                    var itemTag = `<div class="result-detail-item p-2 border-bottom mb-2">
+                                    var itemTag = `<div class="result-detail-item p-2 ${(index+1) == totalNumber ? '' : 'border-bottom'} mb-2">
                                         <div class="detail-noted-sentence">${item.text}</div>
                                         <div class="detail-statistics d-flex justify-content-between mt-2">
-                                            <div>contradiction <div class="statistic low-value">${item.entailment.contradiction.toFixed(8)}</div></div>
-                                            <div>neutral <div class="statistic">${item.entailment.neutral.toFixed(8)}</div></div>
-                                            <div>entailment <div class="statistic high-value">${item.entailment.entailment.toFixed(8)}</div></div>
+                                            <div>contradiction <div class="statistic ${addPointColor(item.entailment.contradiction.toFixed(8))}">${item.entailment.contradiction.toFixed(8)}</div></div>
+                                            <div>neutral <div class="statistic ${addPointColor(item.entailment.neutral.toFixed(8))}">${item.entailment.neutral.toFixed(8)}</div></div>
+                                            <div>entailment <div class="statistic ${addPointColor(item.entailment.entailment.toFixed(8))}">${item.entailment.entailment.toFixed(8)}</div></div>
                                         </div>
                                     </div>`;
 
                                     $('.refuse-page .result-detail-box').append(itemTag);
                                 });
                             });
+                            $(".result-item-refuse").eq(0).trigger("click");
                             // console.log(detaiSupportList);
                             // console.log(detailRefuseList);
                         }
@@ -575,7 +357,6 @@
                     })
                 } else {
                     $('.input-notification').removeClass('d-none');
-                    console.log(2);
                 }
             });
 
@@ -593,11 +374,14 @@
                             "post": value
                         }),
                         beforeSend: function () {
-
+                            $('.search-btn').addClass("btn-disabled");
+                            $(".keywords-loading").removeClass("d-none");
                         },
                     }).done(function (data) {
                         if (data?.keywords) {
                             keywordsInput.val(data.keywords);
+                            $('.search-btn').removeClass("btn-disabled");
+                            $(".keywords-loading").addClass("d-none");
                         } else {
 
                         }
